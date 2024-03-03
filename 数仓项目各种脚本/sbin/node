@@ -1,0 +1,106 @@
+#!/bin/bash
+#当前主机的名称
+current_hostname=$(hostname)
+#主服务器的名称
+main_hostname=${current_hostname}
+#获取所有的主机名
+all_hosts=$(cat /etc/hosts | grep -v "^#" | awk '{print $2}')
+#如果通过-h指定了主机地址，则使用指定的地址
+while getopts "h:m:" opt
+do
+  case $opt in
+    h){
+      all_hosts=$(echo $OPTARG | tr ',' ' ')
+     };;
+    m){
+      main_hostname=$OPTARG
+     };;
+  esac
+done
+shift $(($OPTIND -1))
+
+function exe() {
+  cmd=$1
+  flag=""
+  for i in ${all_hosts};do
+    if [ "${current_hostname}" != "${i}" ]; then
+      echo "--------- ${i} ---------"
+      ssh "${i}" "${cmd}"
+      else
+        flag="1" #表示当前
+    fi
+    sleep 1s
+  done
+  if [ "${flag}" == "1" ]; then
+    echo "--------- ${current_hostname} ---------"
+    ssh "${current_hostname}" "${cmd}"
+  fi
+}
+function exe_all() {
+  cmd=$1
+  flag=""
+  for i in ${all_hosts};do
+    echo "--------- ${i} ---------"
+    ssh "${i}" "${cmd}"
+    sleep 1s
+  done
+}
+function start_service() {
+    ssh "${main_hostname}" "source /etc/profile;zk.sh start"
+    sleep 5s
+    ssh "${main_hostname}" "source /etc/profile;hadoop.sh start"
+    sleep 10s
+    ssh "${main_hostname}" "source /etc/profile;kafka.sh start"
+    sleep 5s
+    ssh "${main_hostname}" "source /etc/profile;hive.sh start"
+    sleep 5s
+    ssh "${main_hostname}" "source /etc/profile;sync-db-inc.sh start"
+    sleep 5s
+    ssh "${main_hostname}" "source /etc/profile;sync-log.sh start"
+    sleep 5s
+    ssh "${main_hostname}" "source /etc/profile;maxwell.sh start"
+    sleep 5s
+    ssh "${main_hostname}" "source /etc/profile;collect-log.sh start"
+    sleep 5s
+}
+function stop_service() {
+    ssh "${main_hostname}" "source /etc/profile;collect-log.sh stop"
+    sleep 3s
+    ssh "${main_hostname}" "source /etc/profile;maxwell.sh stop"
+    sleep 3s
+    ssh "${main_hostname}" "source /etc/profile;sync-log.sh stop"
+    sleep 3s
+    ssh "${main_hostname}" "source /etc/profile;sync-db-inc.sh stop"
+    sleep 3s
+    ssh "${main_hostname}" "source /etc/profile;hive.sh stop"
+    sleep 3s
+    ssh "${main_hostname}" "source /etc/profile;kafka.sh stop"
+    sleep 5s
+    ssh "${main_hostname}" "source /etc/profile;hadoop.sh stop"
+    sleep 3s
+    ssh "${main_hostname}" "source /etc/profile;zk.sh stop"
+    sleep 5s
+}
+case "$1" in
+	"off" )
+		exe "shutdown -h now"
+		;;
+	"reboot" )
+		exe "reboot"
+		;;
+	"jps" )
+		exe_all "source /etc/profile;jps"
+		;;
+	"start" )
+		start_service
+		;;
+	"stop" )
+		stop_service
+		;;
+	* )
+		echo "Usage: $0 [-h {hostname1,hostname2}] [-m {hostname}] {off|reboot|jps|start|stop}"
+		;;
+esac
+
+
+

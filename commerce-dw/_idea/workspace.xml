@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6dd9cbb4-1dcf-4142-b844-98f4d4a9ce3d" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PATH_TO_GIT" value="E:\Software\Git\bin\git.exe" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2OrROic1HGanNGfPHYMlr6qc1v8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/IdeaProjects/BigData&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;bigdataide_conn_settings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a5fd693d38daf986aa09764ecbea6877&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.CommerceMockDBApplication">
+    <configuration name="CommerceMockDBApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="commerce-mock-db" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hnumi.commerce.mock.db.CommerceMockDBApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommerceMockLogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="commerce-mock-log" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hnumi.commerce.mock.log.CommerceMockLogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6dd9cbb4-1dcf-4142-b844-98f4d4a9ce3d" name="Changes" comment="" />
+      <created>1682316689927</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682316689927</updated>
+      <workItem from="1682316692102" duration="2028000" />
+      <workItem from="1682320006740" duration="1395000" />
+      <workItem from="1682335336822" duration="33000" />
+      <workItem from="1682344865430" duration="1043000" />
+      <workItem from="1682489926025" duration="584000" />
+      <workItem from="1682490527573" duration="94000" />
+      <workItem from="1682490633644" duration="52000" />
+      <workItem from="1682490795226" duration="235000" />
+      <workItem from="1682491055043" duration="157000" />
+      <workItem from="1682491229655" duration="414000" />
+      <workItem from="1682491817000" duration="744000" />
+      <workItem from="1682492579024" duration="121000" />
+      <workItem from="1682492711330" duration="212000" />
+      <workItem from="1682492934756" duration="98000" />
+      <workItem from="1682509821381" duration="2780000" />
+      <workItem from="1682512904189" duration="1000000" />
+      <workItem from="1682944701667" duration="911000" />
+      <workItem from="1682948178459" duration="609000" />
+      <workItem from="1683023294449" duration="2124000" />
+      <workItem from="1683109041958" duration="629000" />
+      <workItem from="1683175371139" duration="1462000" />
+      <workItem from="1685360958616" duration="163000" />
+      <workItem from="1685445863800" duration="54000" />
+      <workItem from="1686483407557" duration="142000" />
+      <workItem from="1686880344321" duration="26000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

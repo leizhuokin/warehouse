@@ -1,0 +1,64 @@
+{
+    "job": {
+        "setting": {
+            "speed": {
+                "channel": 1
+            }
+        },
+        "content": [
+            {
+               
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "username": "root",
+                        "password": "123456",
+                        "column": [
+                            "id",
+                            "name",
+                            "region_id"
+                        ],
+                        "where": "id>=10",
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                    "jdbc:mysql://node02:3306/commerce"
+                                ],
+                                "table": [
+                                    "base_province"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "defaultFS": "hdfs://node01:8020",
+                        "fileType": "text",
+                        "path": "/test/commerce/full_base_province/${ts}",
+                        "fileName": "full_base_province",
+                        "fieldDelimiter": "\t",
+                        "column": [
+                            {
+                                "name": "id",
+                                "type": "TINYINT"
+                            },
+                            {
+                                "name": "name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "region_id",
+                                "type": "string"
+                            }
+                        ],
+                        "writeMode": "append",
+                        "fieldDelimiter": "\t",
+                        "compress":"GZIP"
+                    }
+                }
+            }
+        ]
+    }
+}

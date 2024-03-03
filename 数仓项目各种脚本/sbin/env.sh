@@ -1,0 +1,39 @@
+#JOBS_HOME
+export JOB_HOME=/opt/jobs
+#JAVA_HOME
+export JAVA_HOME=/opt/apps/jdk
+export JRE_HOME=$JAVA_HOME/jre
+#Zookeeper
+export ZOOKEEPER_HOME=/opt/apps/zookeeper
+#HADOOP
+export HADOOP_HOME=/opt/apps/hadoop
+export HADOOP_LOG_DIR=$HADOOP_HOME/logs
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export JAVA_LIBRAY_PATH=${HADOOP_HOME}/lib/native
+export LD_LIBRARY_PATH=$JAVA_LIBRAY_PATH
+##Hadoop User
+export HADOOP_USERNAME=root
+export HDFS_NAMENODE_USER=$HADOOP_USERNAME
+export HDFS_DATANODE_USER=$HADOOP_USERNAME
+export HDFS_SECONDARYNAMENODE_USER=$HADOOP_USERNAME
+export YARN_RESOURCEMANAGER_USER=$HADOOP_USERNAME
+export YARN_NODEMANAGER_USER=$HADOOP_USERNAME
+export HDFS_JOURNALNODE_USER=$HADOOP_USERNAME
+export HDFS_ZKFC_USER=$HADOOP_USERNAME
+##Spark
+export SPARK_HOME=/opt/apps/spark
+##Hive
+export HIVE_HOME=/opt/apps/hive
+##KAFKA_HOME
+export KAFKA_HOME=/opt/apps/kafka
+##FLUME_HOME
+export FLUME_HOME=/opt/apps/flume
+##MAXWELL_HOME
+export MAXWELL_HOME=/opt/apps/maxwell
+##DATAX_HOME
+export DATAX_HOME=/opt/apps/datax
+#PATH
+export PATH=$PATH:$JOB_HOME/sbin:$JOB_HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin
+export PATH=$PATH:$ZOOKEEPER_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$SPARK_HOME/bin:$HIVE_HOME/bin:$HIVE_HOME/sbin:$KAFKA_HOME/bin
+
+
